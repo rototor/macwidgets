@@ -6,12 +6,19 @@
 	 <groupId>com.explodingpixels</groupId>
         <artifactId>mac_widgets</artifactId>
 	<name>${project.groupId}:${project.artifactId}</name>
-	 <version>0.9.5-r411</version>
+	 <version>0.9.5-r411-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
+
+<dependency>
+    <groupId>com.jgoodies</groupId>
+        <artifactId>forms</artifactId>
+	    <version>1.2.1</version>
+	    </dependency>
 	</dependencies>
 	<build>
+	<sourceDirectory>source</sourceDirectory>
 		<resources>
 			<resource>
 				<directory>source</directory>
@@ -26,26 +33,6 @@
 		<plugins>
 
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.1</version>
-				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>source</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
@@ -57,9 +44,34 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+
+
+			<plugin>
+			        <artifactId>maven-source-plugin</artifactId>
+				        <executions>
+					                <execution>
+							                        <id>attach-sources</id>
+										                        <phase>verify</phase>
+													                        <goals>
+																                                <goal>jar</goal>
+																				                        </goals>
+																							                </execution>
+																									        </executions>
+																										</plugin>
+																										
 		</plugins>
 	</build>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<distributionManagement>
+		<repository>
+			<id>repo-deploy</id>
+			<url>http://ems:emsems@10.50.3.5:8081/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>repo-deploy-snapshot</id>
+			<url>http://ems:emsems@10.50.3.5:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>

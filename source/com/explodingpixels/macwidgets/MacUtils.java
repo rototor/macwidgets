@@ -32,6 +32,11 @@ public class MacUtils {
      * painting bugs in the Java distrobution.
      */
     public static boolean shouldManuallyPaintTexturedWindowBackground() {
+    	/*
+    	 * Java 7 cant paint this correctly
+    	 */
+    	if( PlatformUtils.isJava7OnMac())
+    		return true;
         boolean shouldManuallyPaintOnMac =
                 PlatformUtils.isMac() && PlatformUtils.isLeopard() && PlatformUtils.isJava6OnMac();
         return !PlatformUtils.isMac() || shouldManuallyPaintOnMac;

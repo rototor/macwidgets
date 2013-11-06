@@ -44,7 +44,15 @@ public class PlatformUtils {
     public static boolean isJava6OnMac() {
         return isMac() && getJavaVersion().startsWith("1.6");
     }
-
+    
+    /**
+     * True if this JVM is running Java 7 on a Mac.
+     *
+     * @return true if this JVM is running Java 7 on a Mac.
+     */
+    public static boolean isJava7OnMac() {
+        return isMac() && getJavaVersion().startsWith("1.7");
+    }
     /**
      * True if this JVM is running 64 bit Java on a Mac.
      *
