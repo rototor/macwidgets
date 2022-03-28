@@ -6,7 +6,7 @@
 	 <groupId>com.explodingpixels</groupId>
         <artifactId>mac_widgets</artifactId>
 	<name>${project.groupId}:${project.artifactId}</name>
-	 <version>0.9.5-r411-rototor1-SNAPSHOT</version>
+	 <version>0.9.5-r411-rototor2</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
