@@ -20,7 +20,7 @@ public class ImagePainter implements MacWidgetsPainter<Component> {
         try {
             fImage = ImageIO.read(url);
         } catch (IOException e) {
-            throw new IllegalArgumentException("Problem reading image file.");
+            throw new IllegalArgumentException("Problem reading image file.",e);
         }
 
     }

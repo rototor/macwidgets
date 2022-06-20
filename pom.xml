@@ -6,7 +6,7 @@
 	 <groupId>com.explodingpixels</groupId>
         <artifactId>mac_widgets</artifactId>
 	<name>${project.groupId}:${project.artifactId}</name>
-	 <version>0.9.5-r411-rototor2</version>
+	 <version>0.9.5-r411-rototor3</version>
 	<packaging>jar</packaging>
 
 	<dependencies>
@@ -40,8 +40,8 @@
 					<compilerArguments>
 						<encoding>utf8</encoding>
 					</compilerArguments>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 
